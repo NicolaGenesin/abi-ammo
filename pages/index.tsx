@@ -94,15 +94,23 @@ export default function Home() {
                 mt="24px"
                 as="h1"
               >
-                Arena Breakout Infinite Ammo Charts
+                Arena Breakout Infinite - Ammo and Armor Charts
               </Text>
               <Text
-                color="red.700"
-                fontSize="lg"
+                color="red.600"
+                fontSize="md"
                 textAlign="center"
                 fontWeight="bold"
               >
-                v0.x (Updated on 2024/05/15)
+                v0.x (Updated on 2024/05/15) | created by Filod from{" "}
+                <Link
+                  href="https://www.eft-ammo.com"
+                  isExternal
+                  textDecoration={"underline"}
+                  fontSize={14}
+                >
+                  EFT-AMMO
+                </Link>
               </Text>
             </VStack>
           </Center>
