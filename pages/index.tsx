@@ -24,7 +24,7 @@ import DesktopRow from "@/components/DesktopRow";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const getColor = (value) => {
+export const getColor = (value: string | number) => {
   if (!value) {
     return "";
   }
@@ -53,34 +53,6 @@ export const getColor = (value) => {
   return "tarkovYellow.100";
 };
 
-export const getRecoilColor = (value) => {
-  if (value === "") {
-    return "vulcan.900";
-  } else if (value <= 0) {
-    return "#4cf057";
-  } else if (value > 100) {
-    return "#cf0b04";
-  } else if (value > 80) {
-    return "#ea6b0a";
-  } else if (value > 40) {
-    return "#f99d10";
-  } else if (value > 0) {
-    return "#c0b825";
-  }
-};
-
-export const getAccuracyColor = (value) => {
-  if (value === "") {
-    return "vulcan.900";
-  } else if (value <= 0) {
-    return "#cf0b04";
-  } else if (value > 100) {
-    return "#4cf057";
-  } else if (value > 0) {
-    return "#87d43d";
-  }
-};
-
 export default function Home() {
   const tmp = ammoData;
 
@@ -101,8 +73,6 @@ export default function Home() {
   const [expandedItems, setExpandedIndexes] = useState([
     ...Array(keysFilteredByWeaponName.length).keys(),
   ]);
-
-  console.log(calibers);
 
   return (
     <>
@@ -145,7 +115,7 @@ export default function Home() {
             allowMultiple
             allowToggle
             reduceMotion={true}
-            onChange={(expandedIndexes) => {
+            onChange={(expandedIndexes: number[]) => {
               setExpandedIndexes(expandedIndexes);
             }}
             w={["100%", "100%", "100%", "100%", "95%", "90%"]}

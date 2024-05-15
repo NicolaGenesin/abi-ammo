@@ -1,4 +1,4 @@
-import { getRecoilColor, getAccuracyColor, getColor } from "@/pages";
+import { getColor } from "@/pages";
 import {
   AccordionPanel,
   Flex,
