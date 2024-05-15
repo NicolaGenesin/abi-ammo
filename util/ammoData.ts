@@ -866,7 +866,7 @@ export const ammoData = [
     "V.Recoil Control": -1,
     "H.Recoil Control": -2,
     "Wound Chance": "Medium",
-    "Extra Range": "'+10m",
+    "Extra Range": "+10m",
     "Stamina Drain": "",
   },
   {
@@ -881,7 +881,7 @@ export const ammoData = [
     "V.Recoil Control": -1,
     "H.Recoil Control": -2,
     "Wound Chance": "Low",
-    "Extra Range": "'+10m",
+    "Extra Range": "+10m",
     "Stamina Drain": "",
   },
   {
@@ -896,7 +896,7 @@ export const ammoData = [
     "V.Recoil Control": "+1",
     "H.Recoil Control": "+2",
     "Wound Chance": "Medium",
-    "Extra Range": "'+10m",
+    "Extra Range": "+10m",
     "Stamina Drain": "",
   },
   {
@@ -911,7 +911,7 @@ export const ammoData = [
     "V.Recoil Control": "+2",
     "H.Recoil Control": "+4",
     "Wound Chance": "High",
-    "Extra Range": "'+10m",
+    "Extra Range": "+10m",
     "Stamina Drain": "",
   },
   {
@@ -926,7 +926,7 @@ export const ammoData = [
     "V.Recoil Control": -2,
     "H.Recoil Control": -4,
     "Wound Chance": "Low",
-    "Extra Range": "'+10m",
+    "Extra Range": "+10m",
     "Stamina Drain": "",
   },
   {
@@ -941,7 +941,7 @@ export const ammoData = [
     "V.Recoil Control": -3,
     "H.Recoil Control": -5,
     "Wound Chance": "",
-    "Extra Range": "'+10m",
+    "Extra Range": "+10m",
     "Stamina Drain": "",
   },
   {
