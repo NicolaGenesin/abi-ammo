@@ -88,7 +88,7 @@ export default function Home() {
             <VStack>
               <Text
                 textAlign="center"
-                color="red.700"
+                color="tarkovYellow.100"
                 fontWeight="bold"
                 fontSize={["xl", "4xl"]}
                 mt="24px"
