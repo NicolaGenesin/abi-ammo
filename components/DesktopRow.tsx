@@ -47,7 +47,7 @@ const DesktopRow = ({
       <AccordionPanel pt={1} pb={0} px={0} mt="-34px" style={{ zIndex: 10 }}>
         <>
           <Flex>
-            <Box h={maxCellHeight} minW="215px" />
+            <Box h={maxCellHeight} minW="175px" />
             {Object.keys(headers).map((headerLabel, index) => {
               const headerProperty: any = headers[headerLabel];
               const isSortable = [2, 3, 4, 5].includes(index);
@@ -84,14 +84,14 @@ const DesktopRow = ({
                   color={"tarkovYellow.100"}
                   fontSize={12}
                 >
-                  <HStack minW="215px" py="2px" pr="8px">
+                  <HStack minW="175px" py="2px" pr="8px">
                     <Center
                       // bg={ammoMatch ? "blue.600" : ""}
                       fontSize="xs"
                       fontWeight="semibold"
                       ml="8px"
                     >
-                      {ammo.Name}
+                      {ammo.Name.replace(caliber, "")}
                     </Center>
                     <Spacer />
                   </HStack>
