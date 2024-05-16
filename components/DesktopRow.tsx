@@ -1,4 +1,4 @@
-import { getColor, getColorNumbers } from "@/pages";
+import { getColorNumbers, getColor } from "@/util/colors";
 import {
   AccordionPanel,
   Flex,
