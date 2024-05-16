@@ -25,15 +25,7 @@ const headers: any = {
   "Stamina Drain": "Stamina Drain",
 };
 
-const DesktopRow = ({
-  ammos,
-  caliber,
-  maxCellHeight,
-}: {
-  ammos: any[];
-  caliber: string;
-  maxCellHeight: string;
-}) => {
+const DesktopRow = ({ ammos, caliber }: { ammos: any[]; caliber: string }) => {
   return (
     <Box bg="vulcan.850">
       <AccordionButton p="0" _focus={{ boxShadow: "none" }}>
@@ -47,7 +39,7 @@ const DesktopRow = ({
       <AccordionPanel pt={1} pb={0} px={0} mt="-34px" style={{ zIndex: 10 }}>
         <>
           <Flex>
-            <Box h={maxCellHeight} minW="175px" />
+            <Box h={"48px"} minW="175px" />
             {Object.keys(headers).map((headerLabel, index) => {
               const headerProperty: any = headers[headerLabel];
               const isSortable = [2, 3, 4, 5].includes(index);

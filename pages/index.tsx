@@ -11,9 +11,11 @@ import {
   AccordionItem,
   Accordion,
   Input,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import DesktopRow from "@/components/DesktopRow";
+import MobileRow from "@/components/MobileRow";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -37,14 +39,14 @@ export default function Home() {
     return acc;
   }, {});
 
-  let maxCellHeight = "48px";
-
   // count keys in ammoByCaliber
   const keysFilteredByWeaponName = Object.keys(calibers);
 
   const [expandedItems, setExpandedIndexes] = useState([
     ...Array(keysFilteredByWeaponName.length).keys(),
   ]);
+
+  const isMobile = useBreakpointValue({ base: true, md: false });
 
   return (
     <>
@@ -166,7 +168,7 @@ export default function Home() {
               defaultIndex={expandedItems}
               index={expandedItems}
               allowMultiple
-              allowToggle
+              // allowToggle
               reduceMotion={true}
               onChange={(expandedIndexes: number[]) => {
                 setExpandedIndexes(expandedIndexes);
@@ -186,11 +188,17 @@ export default function Home() {
                       w="100%"
                     >
                       <AccordionItem border="none" w="100%" key={caliber}>
-                        <DesktopRow
-                          ammos={calibers[caliber]}
-                          caliber={caliber}
-                          maxCellHeight={maxCellHeight}
-                        />
+                        {isMobile ? (
+                          <MobileRow
+                            ammos={calibers[caliber]}
+                            caliber={caliber}
+                          />
+                        ) : (
+                          <DesktopRow
+                            ammos={calibers[caliber]}
+                            caliber={caliber}
+                          />
+                        )}
                       </AccordionItem>
                     </Box>
                   );
