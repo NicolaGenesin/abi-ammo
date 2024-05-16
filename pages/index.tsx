@@ -1,30 +1,42 @@
 "use client";
 import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
 import { Link } from "@chakra-ui/next-js";
 import { ammoData } from "@/util/ammoData";
 import {
-  Flex,
-  HStack,
-  Checkbox,
   Center,
-  Tooltip,
-  Spacer,
   VStack,
   Text,
   Box,
-  AccordionPanel,
   AccordionItem,
   Accordion,
+  Input,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import DesktopRow from "@/components/DesktopRow";
 
 const inter = Inter({ subsets: ["latin"] });
 
+export const getColorNumbers = (value: number | string, inverse: boolean) => {
+  if (value === "") {
+    return;
+  }
+
+  const tmpValue = inverse ? -Number(value) : Number(value);
+
+  if (tmpValue > 0) {
+    return "#4cf057";
+  } else if (tmpValue < 0) {
+    return "#cf0b04";
+  } else if (tmpValue === 0) {
+    return "red.300";
+  }
+};
+
 export const getColor = (value: string | number) => {
+  if (value === 0) {
+    return "gray.300";
+  }
   if (!value) {
     return "";
   }
@@ -55,9 +67,17 @@ export const getColor = (value: string | number) => {
 
 export default function Home() {
   const tmp = ammoData;
+  const [searchQuery, setSearchQuery] = useState("");
+
+  // Filter ammoData based on search query
+  const filteredAmmoData = tmp.filter(
+    (ammo) =>
+      ammo.Caliber.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      ammo.Name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   // group ammoData by Caliber
-  const calibers = tmp.reduce((acc: any, ammo: any) => {
+  const calibers = filteredAmmoData.reduce((acc: any, ammo: any) => {
     if (!acc[ammo.Caliber]) {
       acc[ammo.Caliber] = [];
     }
@@ -82,9 +102,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${styles.main} ${inter.className}`}>
-        <Box pb="48px" id="eft-ammo-contentcontainer">
-          <Center mb="24px">
+      <main className={`${inter.className}`}>
+        <Box pt="48px">
+          <Center pb="48px">
             <VStack>
               <Text
                 textAlign="center"
@@ -102,7 +122,7 @@ export default function Home() {
                 textAlign="center"
                 fontWeight="bold"
               >
-                v0.x (Updated on 2024/05/15) | created by Filod from{" "}
+                v0.x (Updated on 2024/05/15) | created by{" "}
                 <Link
                   href="https://www.eft-ammo.com"
                   isExternal
@@ -116,42 +136,58 @@ export default function Home() {
           </Center>
         </Box>
         <Center>
-          <Accordion
-            textAlign="center"
-            defaultIndex={expandedItems}
-            index={expandedItems}
-            allowMultiple
-            allowToggle
-            reduceMotion={true}
-            onChange={(expandedIndexes: number[]) => {
-              setExpandedIndexes(expandedIndexes);
-            }}
-            w={["100%", "100%", "100%", "100%", "95%", "90%"]}
-          >
-            <VStack>
-              {Object.keys(calibers).map((caliber, index) => {
-                return (
-                  <Box
-                    key={`allAmmos-${index}`}
-                    color="tarkovYellow.100"
-                    mx="24px"
-                    rounded="sm"
-                    border="6px solid"
-                    borderColor="vulcan.900"
-                    w="100%"
-                  >
-                    <AccordionItem border="none" w="100%" key={caliber}>
-                      <DesktopRow
-                        ammos={calibers[caliber]}
-                        caliber={caliber}
-                        maxCellHeight={maxCellHeight}
-                      />
-                    </AccordionItem>
-                  </Box>
-                );
-              })}
-            </VStack>
-          </Accordion>
+          <VStack>
+            <Input
+              type="text"
+              placeholder="Search by caliber or ammo name..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              maxW={"780px"}
+              borderRadius={"none"}
+              bg={"vulcan.900"}
+              color={"tarkovYellow.100"}
+              fontWeight={"semibold"}
+              borderColor={"vulcan.900"}
+              _placeholder={{ color: "tarkovYellow.100", textAlign: "center" }}
+              mb={4}
+            />
+            <Accordion
+              textAlign="center"
+              defaultIndex={expandedItems}
+              index={expandedItems}
+              allowMultiple
+              allowToggle
+              reduceMotion={true}
+              onChange={(expandedIndexes: number[]) => {
+                setExpandedIndexes(expandedIndexes);
+              }}
+              w={["100%"]}
+            >
+              <VStack>
+                {Object.keys(calibers).map((caliber, index) => {
+                  return (
+                    <Box
+                      key={`allAmmos-${index}`}
+                      color="tarkovYellow.100"
+                      mx="24px"
+                      rounded="sm"
+                      border="6px solid"
+                      borderColor="vulcan.900"
+                      w="100%"
+                    >
+                      <AccordionItem border="none" w="100%" key={caliber}>
+                        <DesktopRow
+                          ammos={calibers[caliber]}
+                          caliber={caliber}
+                          maxCellHeight={maxCellHeight}
+                        />
+                      </AccordionItem>
+                    </Box>
+                  );
+                })}
+              </VStack>
+            </Accordion>
+          </VStack>
         </Center>
       </main>
     </>

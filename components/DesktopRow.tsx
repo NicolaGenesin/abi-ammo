@@ -1,4 +1,4 @@
-import { getColor } from "@/pages";
+import { getColor, getColorNumbers } from "@/pages";
 import {
   AccordionPanel,
   Flex,
@@ -112,21 +112,21 @@ const DesktopRow = ({
                   </Center>
                   <Center
                     flex="1"
-                    bg={getColor(ammo["Accuracy"])}
+                    bg={getColorNumbers(ammo["Accuracy"], false)}
                     color="black"
                   >
                     {ammo["Accuracy"]}
                   </Center>
                   <Center
                     flex="1"
-                    bg={getColor(ammo["V.Recoil Control"])}
+                    bg={getColorNumbers(ammo["V.Recoil Control"], false)}
                     color="black"
                   >
                     {ammo["V.Recoil Control"]}
                   </Center>
                   <Center
                     flex="1"
-                    bg={getColor(ammo["H.Recoil Control"])}
+                    bg={getColorNumbers(ammo["H.Recoil Control"], false)}
                     color="black"
                   >
                     {ammo["H.Recoil Control"]}
@@ -147,7 +147,7 @@ const DesktopRow = ({
                   </Center>
                   <Center
                     flex="1"
-                    bg={getColor(ammo["Stamina Drain"])}
+                    bg={getColorNumbers(ammo["Stamina Drain"], true)}
                     color="black"
                   >
                     {ammo["Stamina Drain"]}
