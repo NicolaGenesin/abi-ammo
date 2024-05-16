@@ -12,17 +12,17 @@ import {
 } from "@chakra-ui/react";
 
 const headers: any = {
-  Dmg: "Damage",
-  Pen: "Penetration",
+  Damage: "Damage",
+  Penetration: "Penetration",
   "Pierce lvl": "Pierce Level",
   "Armor Dmg": "Armor Damage",
   "Vel (m/s)": "Velocity (m/s)",
   Accuracy: "Accuracy",
   "V.Recoil Control": "V.Recoil Control",
   "H.Recoil Control": "H.Recoil Control",
-  "Wound %": "Wound Chance",
+  "Wound Chance": "Wound Chance",
   "Extra Range": "Extra Range",
-  "Stam Drain": "Stamina Drain",
+  "Stamina Drain": "Stamina Drain",
 };
 
 const DesktopRow = ({
