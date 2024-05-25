@@ -117,10 +117,10 @@ export default function Home() {
             "Arena Breakout Infinite Ammo and Armor Charts created by Filod 🙌"
           }
         />
-        <meta
+        {/* <meta
           name="twitter:image"
           content="http://eft-ammo.com/assets/og-02.jpg"
-        />
+        /> */}
       </Head>
       <main className={`${inter.className}`}>
         <Box pt="48px">
