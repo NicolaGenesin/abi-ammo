@@ -65,7 +65,7 @@ export default function Home() {
         <meta
           name="description"
           content={
-            "Arena Breakout Infinite Ammo and Armor Charts created by Filod 🙌"
+            "Arena Breakout: Infinite Ammo and Armor Charts created by Filod 🙌"
           }
         />
 
@@ -73,13 +73,13 @@ export default function Home() {
         <meta
           itemProp="name"
           content={
-            "abi-ammo.com 🎮 | The definitive Arena Breakout Infinite Ammo charts v0.x"
+            "abi-ammo.com 🎮 | The definitive Arena Breakout: Infinite Ammo charts v0.x"
           }
         />
         <meta
           itemProp="description"
           content={
-            "Arena Breakout Infinite Ammo and Armor Charts created by Filod 🙌"
+            "Arena Breakout: Infinite Ammo and Armor Charts created by Filod 🙌"
           }
         />
         {/* <meta itemProp="image" content="http://eft-ammo.com/assets/og-02.jpg" /> */}
@@ -90,13 +90,13 @@ export default function Home() {
         <meta
           property="og:title"
           content={
-            "abi-ammo.com 🎮 | The definitive Arena Breakout Infinite Ammo charts v0.x"
+            "abi-ammo.com 🎮 | The definitive Arena Breakout: Infinite Ammo charts v0.x"
           }
         />
         <meta
           property="og:description"
           content={
-            "Arena Breakout Infinite Ammo and Armor Charts created by Filod 🙌"
+            "Arena Breakout: Infinite Ammo and Armor Charts created by Filod 🙌"
           }
         />
         {/* <meta name="og:image" content="http://eft-ammo.com/assets/og-02.jpg" /> */}
@@ -108,13 +108,13 @@ export default function Home() {
         <meta
           name="twitter:title"
           content={
-            "abi-ammo.com 🎮 | The definitive Arena Breakout Infinite Ammo charts v0.x"
+            "abi-ammo.com 🎮 | The definitive Arena Breakout: Infinite Ammo charts v0.x"
           }
         />
         <meta
           name="twitter:description"
           content={
-            "Arena Breakout Infinite Ammo and Armor Charts created by Filod 🙌"
+            "Arena Breakout: Infinite Ammo and Armor Charts created by Filod 🙌"
           }
         />
         {/* <meta
@@ -124,7 +124,7 @@ export default function Home() {
       </Head>
       <main className={`${inter.className}`}>
         <Box pt="48px">
-          <Center pb="48px">
+          <Center>
             <VStack>
               <Text
                 textAlign="center"
@@ -134,7 +134,7 @@ export default function Home() {
                 mt="24px"
                 as="h1"
               >
-                Arena Breakout Infinite - Ammo and Armor Charts
+                Arena Breakout: Infinite - Ammo and Armor Charts
               </Text>
               <Text
                 color="red.600"
@@ -142,7 +142,7 @@ export default function Home() {
                 textAlign="center"
                 fontWeight="bold"
               >
-                v0.x (Updated on 2024/05/25)
+                v0.x (Updated on 05-25-2024)
                 {/* | created by{" "}
                 <Link
                   href="https://www.eft-ammo.com"
@@ -156,19 +156,19 @@ export default function Home() {
             </VStack>
           </Center>
         </Box>
-        <Center>
+        <Center pt="48px" pb="96px">
           <VStack>
             <Input
               type="text"
-              placeholder="Search by caliber or ammo name..."
+              placeholder="Search by caliber or ammo name... e.g. 39mm or lps"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               maxW={"780px"}
               borderRadius={"none"}
               bg={"vulcan.900"}
               color={"tarkovYellow.100"}
-              fontWeight={"semibold"}
-              borderColor={"vulcan.900"}
+              fontWeight={"normal"}
+              borderColor={"vulcan.800"}
               _placeholder={{ color: "tarkovYellow.100", textAlign: "center" }}
               mb={4}
             />
