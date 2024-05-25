@@ -47,6 +47,14 @@ export default function Home() {
   ]);
 
   const isMobile = useBreakpointValue({ base: true, md: false });
+  const [tableState, setTableState] = useState({
+    sorting: {
+      columnBeingSorted: null, // header name
+      direction: {
+        highToLow: true,
+      },
+    },
+  });
 
   return (
     <>
@@ -134,7 +142,8 @@ export default function Home() {
                 textAlign="center"
                 fontWeight="bold"
               >
-                v0.x (Updated on 2024/05/15) | created by{" "}
+                v0.x (Updated on 2024/05/25)
+                {/* | created by{" "}
                 <Link
                   href="https://www.eft-ammo.com"
                   isExternal
@@ -142,7 +151,7 @@ export default function Home() {
                   fontSize={14}
                 >
                   EFT-AMMO
-                </Link>
+                </Link> */}
               </Text>
             </VStack>
           </Center>
@@ -195,6 +204,8 @@ export default function Home() {
                           />
                         ) : (
                           <DesktopRow
+                            tableState={tableState}
+                            setTableState={setTableState}
                             ammos={calibers[caliber]}
                             caliber={caliber}
                           />

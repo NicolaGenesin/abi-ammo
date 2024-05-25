@@ -10,6 +10,7 @@ import {
   AccordionButton,
   AccordionIcon,
 } from "@chakra-ui/react";
+import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti";
 
 const headers: any = {
   Damage: "Damage",
@@ -25,7 +26,29 @@ const headers: any = {
   "Stamina Drain": "Stamina Drain",
 };
 
-const DesktopRow = ({ ammos, caliber }: { ammos: any[]; caliber: string }) => {
+const DesktopRow = ({
+  ammos,
+  caliber,
+  tableState,
+  setTableState,
+}: {
+  ammos: any[];
+  caliber: string;
+  tableState: any;
+  setTableState: (any: any) => any;
+}) => {
+  // sort ammos by tableState.sorting.columnBeingSorted
+  if (tableState.sorting.columnBeingSorted) {
+    const columnBeingSorted = tableState.sorting.columnBeingSorted;
+    const direction = tableState.sorting.direction.highToLow ? -1 : 1;
+
+    console.log(columnBeingSorted, direction);
+
+    ammos.sort((a, b) => {
+      return (a[columnBeingSorted] - b[columnBeingSorted]) * direction;
+    });
+  }
+
   return (
     <Box bg="vulcan.850">
       <AccordionButton p="0" _focus={{ boxShadow: "none" }}>
@@ -62,6 +85,38 @@ const DesktopRow = ({ ammos, caliber }: { ammos: any[]; caliber: string }) => {
                   <Text color={"tarkovYellow.100"}>
                     {headerLabel.toUpperCase()}
                   </Text>
+                  {index < 5 && (
+                    <Box ml="4px">
+                      <TiArrowSortedUp
+                        cursor={"pointer"}
+                        onClick={() => {
+                          setTableState({
+                            ...tableState,
+                            sorting: {
+                              columnBeingSorted: headerProperty,
+                              direction: {
+                                highToLow: false,
+                              },
+                            },
+                          });
+                        }}
+                      />
+                      <TiArrowSortedDown
+                        cursor={"pointer"}
+                        onClick={() => {
+                          setTableState({
+                            ...tableState,
+                            sorting: {
+                              columnBeingSorted: headerProperty,
+                              direction: {
+                                highToLow: true,
+                              },
+                            },
+                          });
+                        }}
+                      />
+                    </Box>
+                  )}
                 </Center>
               );
             })}
