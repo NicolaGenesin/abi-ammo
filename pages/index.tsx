@@ -142,7 +142,7 @@ export default function Home() {
                 textAlign="center"
                 fontWeight="bold"
               >
-                v0.x (Updated on June 1st 2024)
+                v0.x (Updated on June 18th 2024)
                 {/* | created by{" "}
                 <Link
                   href="https://www.eft-ammo.com"

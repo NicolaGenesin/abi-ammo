@@ -91,7 +91,7 @@ export const ammoData = [
   },
   {
     Caliber: "5.45x39mm",
-    Name: "5.45x39mm 7N10M F",
+    Name: "5.45x39mm 7N10M F M",
     Damage: 50,
     Penetration: 35,
     "Pierce Level": 3,
@@ -130,7 +130,7 @@ export const ammoData = [
     Accuracy: "+2",
     "V.Recoil Control": "+1",
     "H.Recoil Control": "+2",
-    "Wound Chance": "Medium",
+    "Wound Chance": "Low",
     "Extra Range": "",
     "Stamina Drain": "",
   },
@@ -541,7 +541,7 @@ export const ammoData = [
   },
   {
     Caliber: "12.7x99mm",
-    Name: "12.7x99mm M2",
+    Name: "12.7x99mm M2 M",
     Damage: 246,
     Penetration: 61,
     "Pierce Level": 6,
@@ -766,7 +766,7 @@ export const ammoData = [
   },
   {
     Caliber: "9x19mm",
-    Name: "9x19mm 7N30 F",
+    Name: "9x19mm 7N30 F M",
     Damage: 49,
     Penetration: 35,
     "Pierce Level": 3,
@@ -827,7 +827,7 @@ export const ammoData = [
   {
     Caliber: "12x70mm",
     Name: "12x70mm Type 8 Buckshot",
-    Damage: "41*8 (328)",
+    Damage: "43*8 (344)",
     Penetration: 4,
     "Pierce Level": 0,
     "Armor Damage": 1,
