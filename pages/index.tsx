@@ -130,11 +130,12 @@ export default function Home() {
                 textAlign="center"
                 color="tarkovYellow.100"
                 fontWeight="bold"
-                fontSize={["xl", "4xl"]}
                 mt="24px"
                 as="h1"
+                style={{ fontStyle: "italic" }}
               >
-                Arena Breakout: Infinite - Ammo and Armor Charts
+                <Text fontSize={["xl", "5xl"]}>Arena Breakout: Infinite</Text>
+                <Text fontSize={["lg", "4xl"]}>Ammo and Armor Charts</Text>
               </Text>
               <Text
                 color="green.500"
