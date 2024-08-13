@@ -142,16 +142,15 @@ export default function Home() {
                 textAlign="center"
                 fontWeight="bold"
               >
-                v0.x (Updated on June 18th 2024)
-                {/* | created by{" "}
+                Updated on August 13th 2024 | by{" "}
                 <Link
                   href="https://www.eft-ammo.com"
                   isExternal
                   textDecoration={"underline"}
-                  fontSize={14}
+                  // fontSize={14}
                 >
-                  EFT-AMMO
-                </Link> */}
+                  eft-ammo.com
+                </Link>
               </Text>
             </VStack>
           </Center>
