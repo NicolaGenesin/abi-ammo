@@ -137,7 +137,7 @@ export default function Home() {
                 Arena Breakout: Infinite - Ammo and Armor Charts
               </Text>
               <Text
-                color="red.600"
+                color="green.500"
                 fontSize="md"
                 textAlign="center"
                 fontWeight="bold"
